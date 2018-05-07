@@ -1,0 +1,11 @@
+page-about {
+    //for the image size not sure if it works 
+    img {
+        max-width: 100%;
+        height: 10%;
+    }
+    //for the buttons
+    ion-grid {
+      padding-top: 0px;
+    }
+}

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Chats</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- <div [ngSwitch]="view">
+
+        <ion-list *ngSwitchCase="'chats'" no-lines>
+          <button ion-item *ngFor="let chat of chats | async" (click)="onChatOpen(chat)">
+            <ion-avatar item-start>
+              <img [src]="chat.photo || 'assets/images/no-photo.jpg'">
+            </ion-avatar>
+            <h2>{{ chat.title }}</h2>
+            <p *ngIf="chat.lastMessage; else customMessage">{{ chat.timestamp | date:'dd/MM/y H:mm' }} - {{ chat.lastMessage }}</p>
+            <ng-template #customMessage>
+              <p>No messages</p>
+            </ng-template>
+          </button>
+        </ion-list>
+    
+        <ion-list *ngSwitchCase="'users'" no-lines>
+          <button ion-item *ngFor="let user of users | async" (click)="onChatCreate(user)">
+            <ion-avatar item-start>
+              <img [src]="user.photo || 'assets/images/no-photo.jpg'">
+            </ion-avatar>
+            {{ user.name }}
+          </button>
+        </ion-list>
+    
+      </div> -->
+
+      <ion-list>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899">
+            </ion-avatar>
+            <h2>Finn</h2>
+            <p>I've had a pretty messed up day. If we just...</p>
+          </ion-item>
+        </ion-list>
+
+  <ion-toolbar>
+    <ion-item no-lines>
+      <ion-input type="text" placeholder="Message..." [(ngModel)]="message"></ion-input>
+      <button ion-button item-end (click)="sendMessage()">
+        <ion-icon name="send"></ion-icon>
+    </button>
+
+    </ion-item>
+  </ion-toolbar>
+
+
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Match
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- start of card with an image, a name
+click on image for full descripton-->
+<ion-content padding>
+  <ion-card>
+    <img src="assets/imgs/woman.jpg" />
+    <ion-card-content>
+      <ion-card-title>
+        Nina Clarke
+        </ion-card-title>
+      <p>
+        lives 0.2 miles away
+      </p>
+    </ion-card-content>
+  </ion-card>
+<!-- end of card -->
+<!-- a grid layout for buttons to be inline -->
+  <ion-grid>
+      <ion-row>
+        <ion-col>
+  <button ion-button block color="danger" icon-only>
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-col>
+  <ion-col>
+    <button ion-button block color="secondary" icon-only>
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!-- end of grid, red button will skip person,
+ green button will add them to the friends list -->
