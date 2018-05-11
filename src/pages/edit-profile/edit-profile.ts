@@ -24,15 +24,19 @@ export class EditProfilePage {
 
   user ={} as User;
 
-  constructor(private fire: AngularFireAuth, private afDatabase: AngularFireDatabase,
-    public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private fire: AngularFireAuth, 
+    private afDatabase: AngularFireDatabase,
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {
   }
 
-createProfile(){
+createProfile(){ 
   this.fire.authState.take(1).subscribe(auth=>{
     this.afDatabase.object('profile/'+auth.uid).set(this.user)
     .then(() => this.navCtrl.setRoot(TabsPage));
-
+// this function takes the input from the form and adds them to the database under the heading profile in Firebase 
   })
 }
 

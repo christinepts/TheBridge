@@ -14,6 +14,7 @@
 
 
 <ion-content padding>
+  <!-- The form for adding basic information about a user which will be displayed in the profile page-->
 <ion-item>
     <!-- <input type="file" -->
     <div class="profile-image" (click)="editimage()">
@@ -35,15 +36,21 @@
     </ion-item>
 
     <ion-item>
+      <!--The address is important as it would be used to help make matches which are local 
+        and close in physical distance between other users-->
         <ion-label floating>Postcode</ion-label>
         <ion-input [(ngModel)]="user.address"> </ion-input>
       </ion-item> 
 
 
       <ion-item>
+        <!--The date of birth information would be used to make matches of 20+ years age gap 
+        and match people who would not usually be matched together-->
           <ion-label>Date of Birth</ion-label>
           <ion-datetime displayFormat="DD/MMMM/YYYY" [(ngModel)]="user.dob"></ion-datetime>
         </ion-item>
   <br>
+  <!--the click buttone to submit data, function linked in .ts file-->
   <button ion-button block (click)="createProfile()">Create Profile</button>
+  
 </ion-content>

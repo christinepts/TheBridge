@@ -33,6 +33,7 @@
 
       <ion-list>
           <ion-item>
+            <!--A display of how the chat layout and format would look if completed-->
             <ion-avatar item-start>
               <img src="https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899">
             </ion-avatar>
@@ -43,6 +44,8 @@
 
   <ion-toolbar>
     <ion-item no-lines>
+      <!--Message bar which takes data but does not store the data 
+      it is part of the layout how the program would look if completed-->
       <ion-input type="text" placeholder="Message..." [(ngModel)]="message"></ion-input>
       <button ion-button item-end (click)="sendMessage()">
         <ion-icon name="send"></ion-icon>

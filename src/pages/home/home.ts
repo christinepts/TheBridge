@@ -46,7 +46,7 @@ export class HomePage {
     public db: AngularFireDatabase
   ) {
 this.user.name = this.navParams.get(name);
-//this.nameRef$=db.list('name')
+
   }
 
 
