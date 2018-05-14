@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {PostsProvider} from '../../providers/posts/posts';
+//import {PostsProvider} from '../../providers/posts/posts';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireObject } from 'angularfire2/database';
@@ -27,20 +27,20 @@ export class SeeRequestsPage {
   postsDataRef:AngularFireObject<Posts[]>;
   postsData: Observable<Posts[]>;
   
-  constructor(public navCtrl: NavController,
+  constructor(
+    public navCtrl: NavController,
      public navParams: NavParams, 
-     public Posts: PostsProvider,
+     //public Posts: PostsProvider,
      private fire: AngularFireAuth,
      private afDatabase: AngularFireDatabase,
     ) {
   } 
   ionViewWillLoad() {
-  this.Posts.load();
-  // this.fire.authState.take(1).subscribe(data => {
-  //   this.postsDataRef = this.afDatabase.object('posts/'+data.uid)
-  //   this.postsData = this.postsDataRef.valueChanges();
-   
-  //  })
+  // this.Posts.load();
+    this.fire.authState.subscribe(data => {
+      this.postsDataRef = this.afDatabase.object('posts/'+ data.uid);
+      this.postsData = this.postsDataRef.valueChanges();
+    });
   }
 
   submit() { 

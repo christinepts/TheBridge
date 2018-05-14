@@ -5,8 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { TabsPage } from './../tabs/tabs';
 import { RegisterPage } from '../register/register';
-//import { AuthProvider } from './../../providers/auth/auth';
-//import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 
 
@@ -16,17 +15,15 @@ import { RegisterPage } from '../register/register';
   templateUrl: 'login.html',
 })
 export class LoginPage {
- // credentials = {} as User; 
 
 
   user = {} as User;
-  //public authService: AuthProvider,
 
   constructor(private fire: AngularFireAuth,
     public navCtrl: NavController, public navParams: NavParams) {
       
     }
- 
+
  
   async signIn(user: User) {
     try {
@@ -41,31 +38,7 @@ export class LoginPage {
   }
 
 
-//   // firebase.auth().signInWithEmailAndPassword()
-//   try {
-//     const result = this.fire.auth.signInWithEmailAndPassword(this.credentials.email, this.credentials.password);
-//     if (result) {
-//       this.navCtrl.setRoot(TabsPage);
-//     }  
-//   }
-//   catch (e) {
-//     console.error(e);
-//   }
-// }
- 
-//      this.authService.signInWithEmail(this.signinForm.value)
-//      .then((result: boolean) => {
 
-//       if (result) {
-//         this.navCtrl.setRoot(TabsPage);
-//     }
-
-//   }).catch((error: any) => {
-//     console.log(error);
-    
-//   });
-// }
-  
 
   register() {
     this.navCtrl.push(RegisterPage);

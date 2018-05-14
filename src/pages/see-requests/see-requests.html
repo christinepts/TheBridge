@@ -15,8 +15,9 @@
 
 <ion-content padding>
 
- <ion-item *ngFor="let post of Posts.posts"> 
-   <!-- ion item moved to allow each iteration of information pulled to be on seperate cards -->
+ <ion-item > 
+   <!-- ion item moved to allow each iteration of information pulled to be on seperate cards 
+    *ngFor="let post of Posts.posts"-->
     <ion-card >
 
        
@@ -25,14 +26,14 @@
             <img src="https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899"> <!-- image will be of user who uploads request -->
           </ion-avatar>
           <br><!--adding space from top of card to not be cut off  -->
-         <h2 text-wrap> {{post.name}}</h2> <!--Text wrap for longer names -->
-          <p> {{ post.date}}</p> <!--to know how long ago something was posted  -->
+         <h2 text-wrap> </h2> <!--{{post.name}}Text wrap for longer names -->
+          <p> </p> <!--{{ post.date}}to know how long ago something was posted  -->
         </ion-item>
       
         <ion-card-content>
-          <h2 text-wrap>{{post.topic}}</h2> 
+          <h2 text-wrap>{{(postsData | async)?.topic}}</h2> 
           <br>
-         <p text-wrap> {{post.summary}} </p> <!-- text wrap descriptions to as to fit on one section on various devices-->
+         <p text-wrap> {{(postsData | async)?.request}} </p> <!-- text wrap descriptions to as to fit on one section on various devices-->
         </ion-card-content>
 
         <button ion-button full (click)="submit()">Send Message</button> <!-- will be used to send a message when chats is working -->

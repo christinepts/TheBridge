@@ -29,19 +29,19 @@ postsData: Observable<any[]>;
    //public http: HttpClient
   }
   load(){
-   this.posts=[
-    this.fire.authState.take(1).subscribe(data => {
-      this.postsDataRef = this.afDatabase.object('posts/'+data.uid)
-      this.postsData = this.postsDataRef.valueChanges();
+  // this.posts=[
+    // this.fire.authState.take(1).subscribe(data => {
+    //   this.postsDataRef = this.afDatabase.object('posts/'+data.uid)
+    //   this.postsData = this.postsDataRef.valueChanges();
 
      
-     })
+    //  })
     
    
       //posts will be pulled from a server when finished 
-      ,{name:'Christine Profillidou-Tseriotis', date:'April 11, 2018', topic:'Transport', summary:'I need some help to get a lift to the doctors for an appointment I have...'},
-      {name: this.posts.name, date: this.posts.timestamp, topic: this.posts.topic, summary: this.posts.request}
-      ];
+      // ,{name:'Christine Profillidou-Tseriotis', date:'April 11, 2018', topic:'Transport', summary:'I need some help to get a lift to the doctors for an appointment I have...'},
+      // {name: this.posts.name, date: this.posts.timestamp, topic: this.posts.topic, summary: this.posts.request}
+      // ];
   }
   addItem(){
     //
