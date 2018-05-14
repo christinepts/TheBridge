@@ -37,15 +37,20 @@ export class SeeRequestsPage {
 
   } 
   ionViewWillLoad() {
-  // this.Posts.load();
+  // this.Posts.load(); was used to connect to provider 
 
+  //code indended to be used to gather all requests made using a snapshot 
   // let postsDataRef= firebase.database().ref().child('profile/');
-  // questionRef.on('value', (snapshot)=>{
-  //   this.question = snapshot.val();
+  // postsDataRef.on('value', (snapshot)=>{
+  //   this.postsData = snapshot.val();
   // });
+
     this.fire.authState.take(1).subscribe(data => {
       this.postsDataRef = this.afDatabase.object('profile/'+ data.uid)
       this.postsData = this.postsDataRef.valueChanges();
+      //function currently provides a single post made by the current user, though with an instant update 
+      //display whole object but list would not work with observables 
+      //changes the models to profile so as to make possible to pull name and img 
     });
 
 

@@ -27,16 +27,17 @@ export class LoginPage {
  
   async signIn(user: User) {
     try {
+      //uses firebase authenticaion for login 
       const result = this.fire.auth.signInWithEmailAndPassword(user.email, this.user.password);
       if (result) {
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(TabsPage);// function will need to be updated with better security functions
       }  
     }
     catch (e) {
       console.error(e);
     }
   }
-
+//requires function for incorrect password 
 
 
 

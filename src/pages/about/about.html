@@ -24,12 +24,13 @@ click on image for full descripton-->
   <ion-grid>
       <ion-row>
         <ion-col>
-  <button ion-button block color="danger" icon-only>
+  <button ion-button block color="danger" icon-only (click)="removeFriend()">
       <ion-icon name="close"></ion-icon>
     </button>
   </ion-col>
   <ion-col>
-    <button ion-button block color="secondary" icon-only>
+    <!-- needs on click function  -->
+    <button ion-button block color="secondary" icon-only (click)="newFriend()">
         <ion-icon name="checkmark"></ion-icon>
       </button>
     </ion-col>

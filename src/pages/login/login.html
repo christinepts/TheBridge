@@ -14,25 +14,31 @@
 
 
 <ion-content padding>
-
+<!-- logo create with free-logos website -->
     <img src="assets/imgs/TheBridgeLogo.png" />
 
         <ion-item>
           <ion-label floating>Email</ion-label>
 
           <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+        <!-- user.emal check against existsing user models page 
+        also checks that email is the correct format -->
         </ion-item>
       
         <ion-item>
           <ion-label floating>Password</ion-label>
           <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+      <!-- user.password check against existsing user models page
+      also checks password is hidden / encrypted automatically by firebase -->
         </ion-item>
 
         <br>
+       <!-- on click function checks users againts the firebase database to sign in  -->
         <button ion-button full (click)="signIn(user)">Sign-In</button>
 
         
         <p>OR</p>
+         <!-- on click redirects to register page -->
         <button ion-button full (click)="register()">Register</button>
            
     

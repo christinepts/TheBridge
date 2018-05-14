@@ -27,8 +27,6 @@ import firebase from 'firebase';
 })
 export class ProfilePage {
 
-// shoppingListRef$: FirebaseListObservable<shoppingItem[]>
-
 profileDataRef:AngularFireObject<User[]>;
 profileData: Observable<User[]>;
   
@@ -43,7 +41,7 @@ profileData: Observable<User[]>;
   }
   
 ionViewWillLoad(){
-  //code which retrives datab from profile in firebase connected to user id 
+  //code which retrives data from profile in firebase connected to user id 
   this.fire.authState.take(1).subscribe(data => {
    this.profileDataRef = this.afDatabase.object('profile/'+data.uid)
    this.profileData = this.profileDataRef.valueChanges();
@@ -51,7 +49,6 @@ ionViewWillLoad(){
   })
  }
  
-
  logout() {
    //sign out button method 
   firebase.auth().signOut().then(() => {
