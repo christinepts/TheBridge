@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { SeeRequestsPage } from '../see-requests/see-requests';
-import { Posts } from '../models/posts';
+import { User } from '../models/user';
 
 /**
  * Generated class for the MakeRequestPage page.
@@ -18,7 +18,7 @@ import { Posts } from '../models/posts';
   templateUrl: 'make-request.html',
 })
 export class MakeRequestPage {
-  posts ={} as Posts;
+  user ={} as User;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -28,11 +28,16 @@ export class MakeRequestPage {
   }
 
   submit(){
+    //this section updates the profile of users with the topics and requests made
+    //this code was also taken from the profile page 
       this.fire.authState.take(1).subscribe(data=>{
-        this.afDatabase.object('posts/'+data.uid).set(this.posts)
+        this.afDatabase.object('profile/'+data.uid).update(this.user)
         .then(() =>this.navCtrl.setRoot(SeeRequestsPage));
+        //and then naviage to the requests page where the post can be seen 
     
       })
+
   }
 
 }
+// https://www.youtube.com/watch?v=uESqBwFVf1Q 

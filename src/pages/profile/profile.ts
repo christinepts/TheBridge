@@ -43,6 +43,7 @@ profileData: Observable<User[]>;
   }
   
 ionViewWillLoad(){
+  //code which retrives datab from profile in firebase connected to user id 
   this.fire.authState.take(1).subscribe(data => {
    this.profileDataRef = this.afDatabase.object('profile/'+data.uid)
    this.profileData = this.profileDataRef.valueChanges();
@@ -59,5 +60,5 @@ ionViewWillLoad(){
 }
  }
 
-
+ //https://www.youtube.com/watch?v=uESqBwFVf1Q - code used to retrive data from database 
  // https://github.com/rajayogan/ionic3chat-ep8 - profile image style link 

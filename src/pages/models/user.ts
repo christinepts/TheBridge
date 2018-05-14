@@ -9,4 +9,7 @@ export interface User {
         dob: number;
         message: string;
 
+        topic: string;
+        request: string;
+
 }
