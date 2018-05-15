@@ -8,5 +8,5 @@ export class Chat {
         public title: string,
         public photo: string
     ) {}
-
+//not used
 }

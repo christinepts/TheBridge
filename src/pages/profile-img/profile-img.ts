@@ -48,38 +48,41 @@ export class ProfileImgPage {
   
   }
 
-  chooseimage() {
-    let loader = this.loadingCtrl.create({
-      content: 'Please wait'
-    })
-    loader.present();
-    this.imgservice.uploadimage().then((uploadedurl: any) => {
-      loader.dismiss();
-      this.zone.run(() => {
-        this.imgurl = uploadedurl;
-        this.moveon = false;
-      })
-    })
-  }
+  // chooseimage() {
+  //   let loader = this.loadingCtrl.create({
+  //     content: 'Please wait'
+  //   })
+  //   loader.present();
+  //   this.imgservice.uploadimage().then((uploadedurl: any) => {
+  //     loader.dismiss();
+  //     this.zone.run(() => {
+  //       this.imgurl = uploadedurl;
+  //       this.moveon = false;
+  //     })
+  //   })
+  // }
 
-  updateproceed() {
-    let loader = this.loadingCtrl.create({
-      content: 'Please wait'
-    })
-    loader.present();
-    this.userservice.updateimage(this.imgurl).then((res: any) => {
-      loader.dismiss();
-      if (res.success) {
-        this.navCtrl.setRoot(TabsPage);
-      }
-      else {
-        alert(res);
-      }
-    })
-  }
+  // updateproceed() {
+  //   let loader = this.loadingCtrl.create({
+  //     content: 'Please wait'
+  //   })
+  //   loader.present();
+  //   this.userservice.updateimage(this.imgurl).then((res: any) => {
+  //     loader.dismiss();
+  //     if (res.success) {
+  //       this.navCtrl.setRoot(TabsPage);
+  //     }
+  //     else {
+  //       alert(res);
+  //     }
+  //   })
+  // }
 
-  proceed() {
-    this.navCtrl.setRoot(TabsPage);
-  }
+  // proceed() {
+  //   this.navCtrl.setRoot(TabsPage);
+  // }
 
+
+  // was going to use a profile image page to store profile image and link it to edit profile page but did not function
+  // https://github.com/rajayogan/ionic3chat-ep8 - code from Raja Yogan 
 }

@@ -21,42 +21,44 @@ export class ChatService extends BaseService {
     public db: AngularFireDatabase,
     public http: Http
   ) {
-    super();
-    this.setChats();
+     super();
+    // this.setChats();
   }
 
-  private setChats(): void {
-    this.afAuth.authState
-      .subscribe((authUser: firebase.User) => {
-        if (authUser) {
+  // private setChats(): void {
+  //   this.afAuth.authState
+  //     .subscribe((authUser: firebase.User) => {
+  //       if (authUser) {
 
-          this.chats = this.db.list<Chat>(`/chats/${authUser.uid}`, 
-            (ref: firebase.database.Reference) => ref.orderByChild('timestamp')
-          );
+  //         this.chats = this.db.list<Chat>(`/chats/${authUser.uid}`, 
+  //           (ref: firebase.database.Reference) => ref.orderByChild('timestamp')
+  //         );
 
-        }
-      });
-  }
+  //       }
+  //     });
+  // }
 
-  create(chat: Chat, userId1: string, userId2: string): Promise<void> {
-    return this.db.object<Chat>(`/chats/${userId1}/${userId2}`)
-      .set(chat)
-      .catch(this.handlePromiseError);
-  }
+  // create(chat: Chat, userId1: string, userId2: string): Promise<void> {
+  //   return this.db.object<Chat>(`/chats/${userId1}/${userId2}`)
+  //     .set(chat)
+  //     .catch(this.handlePromiseError);
+  // }
 
-  getDeepChat(userId1: string, userId2: string): AngularFireObject<Chat> {
-    return this.db.object<Chat>(`/chats/${userId1}/${userId2}`);
-  }
+  // getDeepChat(userId1: string, userId2: string): AngularFireObject<Chat> {
+  //   return this.db.object<Chat>(`/chats/${userId1}/${userId2}`);
+  // }
 
-  updatePhoto(chat: AngularFireObject<Chat>, chatPhoto: string, recipientUserPhoto: string): Promise<boolean> {
-    if (chatPhoto != recipientUserPhoto) {
-      return chat.update({
-        photo: recipientUserPhoto
-      }).then(() => {
-        return true;
-      }).catch(this.handlePromiseError);
-    }
-    return Promise.resolve(false);
-  }
+  // updatePhoto(chat: AngularFireObject<Chat>, chatPhoto: string, recipientUserPhoto: string): Promise<boolean> {
+  //   if (chatPhoto != recipientUserPhoto) {
+  //     return chat.update({
+  //       photo: recipientUserPhoto
+  //     }).then(() => {
+  //       return true;
+  //     }).catch(this.handlePromiseError);
+  //   }
+  //   return Promise.resolve(false);
+  // }
 
 }
+
+// did not fuction and therefore could not be used for chats 

@@ -44,6 +44,7 @@ export class SeeRequestsPage {
   // postsDataRef.on('value', (snapshot)=>{
   //   this.postsData = snapshot.val();
   // });
+  
 
     this.fire.authState.take(1).subscribe(data => {
       this.postsDataRef = this.afDatabase.object('profile/'+ data.uid)
@@ -63,3 +64,5 @@ export class SeeRequestsPage {
 
 
 }
+// https://stackoverflow.com/questions/46550425/how-to-display-data-in-html-using-firebase-and-ionic-3 - snapshot page code
+// //https://www.youtube.com/watch?v=uESqBwFVf1Q - code used to retrive data from database - Paul Halliday video 

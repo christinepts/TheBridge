@@ -19,24 +19,26 @@ const extractError = (error: Response | any): string => {
 
 export abstract class BaseService {
 
-    protected handlePromiseError(error: Response | any): Promise<any> {
-        return Promise.reject(extractError(error));
-    }
+    // protected handlePromiseError(error: Response | any): Promise<any> {
+    //     return Promise.reject(extractError(error));
+    // }
 
-    protected handleObservableError(error: Response | any): Observable<any> {
-        return Observable.throw(extractError(error));
-    }
+    // protected handleObservableError(error: Response | any): Observable<any> {
+    //     return Observable.throw(extractError(error));
+    // }
 
-    mapListKeys<T>(list: AngularFireList<T>): Observable<T[]> {
-        return list
-          .snapshotChanges()
-          .map(actions => actions.map(action => ({ $key: action.key, ...action.payload.val() })));
-    }
+    // mapListKeys<T>(list: AngularFireList<T>): Observable<T[]> {
+    //     return list
+    //       .snapshotChanges()
+    //       .map(actions => actions.map(action => ({ $key: action.key, ...action.payload.val() })));
+    // }
     
-    mapObjectKey<T>(object: AngularFireObject<T>): Observable<T> {
-        return object
-          .snapshotChanges()
-          .map(action => ({ $key: action.key, ...action.payload.val() }));
-    }
+    // mapObjectKey<T>(object: AngularFireObject<T>): Observable<T> {
+    //     return object
+    //       .snapshotChanges()
+    //       .map(action => ({ $key: action.key, ...action.payload.val() }));
+    // }
 
+
+//provider was not used part of https://github.com/rajayogan/ionic3chat-ep8 -code
 }

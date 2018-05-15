@@ -39,6 +39,7 @@ this.user.name = this.navParams.get(name);
 
   }
   chat(){
+    //pushes to chat to represent the functionality 
     this.navCtrl.push(ChatPage);
   }
 

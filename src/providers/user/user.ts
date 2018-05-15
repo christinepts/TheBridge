@@ -30,53 +30,53 @@ import * as firebase from 'firebase/app';
   ) {
     
   }
-  adduser(newuser) {
-    var promise = new Promise((resolve, reject) => {
-      this.afAuth.auth.createUserWithEmailAndPassword(newuser.email, newuser.password).then(() => {
-        this.afAuth.auth.currentUser.updateProfile({
-          displayName: newuser.displayName,
-          photoURL: 'https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899'
-        }).then(() => {
-          this.firedata.child(this.afAuth.auth.currentUser.uid).set({
-            uid: this.afAuth.auth.currentUser.uid,
-            displayName: newuser.displayName,
-            photoURL: 'https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899'
-          }).then(() => {
-            resolve({ success: true });
-            }).catch((err) => {
-              reject(err);
-          })
-          }).catch((err) => {
-            reject(err);
-        })
-      }).catch((err) => {
-        reject(err);
-      })
-    })
-    return promise;
-  }
+  // adduser(newuser) {
+  //   var promise = new Promise((resolve, reject) => {
+  //     this.afAuth.auth.createUserWithEmailAndPassword(newuser.email, newuser.password).then(() => {
+  //       this.afAuth.auth.currentUser.updateProfile({
+  //         displayName: newuser.displayName,
+  //         photoURL: 'https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899'
+  //       }).then(() => {
+  //         this.firedata.child(this.afAuth.auth.currentUser.uid).set({
+  //           uid: this.afAuth.auth.currentUser.uid,
+  //           displayName: newuser.displayName,
+  //           photoURL: 'https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899'
+  //         }).then(() => {
+  //           resolve({ success: true });
+  //           }).catch((err) => {
+  //             reject(err);
+  //         })
+  //         }).catch((err) => {
+  //           reject(err);
+  //       })
+  //     }).catch((err) => {
+  //       reject(err);
+  //     })
+  //   })
+  //   return promise;
+  // }
 
-  updateimage(imageurl) {
-    var promise = new Promise((resolve, reject) => {
-        this.afAuth.auth.currentUser.updateProfile({
-            displayName: this.afAuth.auth.currentUser.displayName,
-            photoURL: imageurl      
-        }).then(() => {
-            firebase.database().ref('/users/' + firebase.auth().currentUser.uid).update({
-            displayName: this.afAuth.auth.currentUser.displayName,
-            photoURL: imageurl,
-            uid: firebase.auth().currentUser.uid
-            }).then(() => {
-                resolve({ success: true });
-                }).catch((err) => {
-                    reject(err);
-                })
-        }).catch((err) => {
-              reject(err);
-           })  
-    })
-    return promise;
-}
+  // updateimage(imageurl) {
+  //   var promise = new Promise((resolve, reject) => {
+  //       this.afAuth.auth.currentUser.updateProfile({
+  //           displayName: this.afAuth.auth.currentUser.displayName,
+  //           photoURL: imageurl      
+  //       }).then(() => {
+  //           firebase.database().ref('/users/' + firebase.auth().currentUser.uid).update({
+  //           displayName: this.afAuth.auth.currentUser.displayName,
+  //           photoURL: imageurl,
+  //           uid: firebase.auth().currentUser.uid
+  //           }).then(() => {
+  //               resolve({ success: true });
+  //               }).catch((err) => {
+  //                   reject(err);
+  //               })
+  //       }).catch((err) => {
+  //             reject(err);
+  //          })  
+  //   })
+  //   return promise;
+//}
 //   private setUsers(uidToExclude: string): void {
 //     this.users = this.mapListKeys<User>(
 //       this.db.list<User>(`/users`, 
@@ -152,3 +152,4 @@ import * as firebase from 'firebase/app';
   //   );
   // }
 }
+// https://github.com/rajayogan/ionic3chat-ep8 - code from Raja Yoagn which could not be edited for this project 

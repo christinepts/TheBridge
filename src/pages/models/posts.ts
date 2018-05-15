@@ -6,4 +6,6 @@ export interface Posts {
     topic: string;
     request: string;
 
+//was used until it no longer linked with current user name 
+// need to learn how to pull current user to use this in database
 }

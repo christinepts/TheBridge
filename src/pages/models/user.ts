@@ -12,4 +12,5 @@ export interface User {
         topic: string;
         request: string;
 
+//used for all the current functionality but will eventually be chnaged only for profile 
 }

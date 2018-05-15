@@ -53,4 +53,6 @@ postsData: Observable<any[]>;
     //
   }
 
+  // intetion was to use providers for posts if correctly functioned however only displays one post at a time
+  
 }

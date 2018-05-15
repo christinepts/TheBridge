@@ -49,6 +49,19 @@ ionViewWillLoad(){
   })
  }
  
+editname(){
+  //will edit name 
+}
+editgender(){
+  //will be able to edit gender - if previously inputted wrong
+}
+editdob(){
+  //will be able to change date of birth - if previously inputted wrong
+}
+editaddress(){
+  //able to edit address the user ever moves homes or if previously inputted wrong
+}
+
  logout() {
    //sign out button method 
   firebase.auth().signOut().then(() => {

@@ -9,7 +9,7 @@ import {ProfilePage }from '../profile/profile';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-
+//sets root to the various pages in the nav bar at bottom of screen 
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;

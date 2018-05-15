@@ -19,15 +19,20 @@
 
     <ion-item>
         <ion-label floating>Email</ion-label>
+        <!-- required registration information is email and password  
+        requires email format-->
         <ion-input type="email" [(ngModel)]="user.email" required="required"></ion-input>
       </ion-item>
     
       <ion-item>
+        <!-- encrypted password for data protection -->
         <ion-label floating>Password</ion-label>
         <ion-input type="password" [(ngModel)]="user.password" required="required"></ion-input>
       </ion-item>
 
       <br>
+      <!-- registers user and sends them to edit profile page so as to not fill in all fields and later be deleted 
+        if something is incorrect or missing-->
       <button ion-button full (click)="register(user)">Register</button>
 
 </ion-content>

@@ -15,12 +15,14 @@
 
 <ion-content padding>
 
-
+<!-- profile image needs to be pulled from database once able to staore link on user -->
   <div class="profile-image" (click)="editimage()">
       <img src="https://firebasestorage.googleapis.com/v0/b/the-bridge-497db.appspot.com/o/BlankProfileImg.png?alt=media&token=37347848-4c78-45cb-a94a-dcc85f8f4899">
  </div>
 
      <div>
+       <!-- pulls data from profileData using async method Paul Halliday -->
+       <!-- methods in place for being able to edit page which is incomplete -->
       <h2 (click)="editname()">Name: {{(profileData | async)?.name}}</h2>
     </div>
   
@@ -28,23 +30,26 @@
         <p (click)="editgender()">Gender: {{(profileData | async)?.gender}}</p>
     </div>
     <div>
-        <p (click)="editmonth()">Date Of Birth: {{(profileData | async)?.dob}}</p>
+        <p (click)="editdob()">Date Of Birth: {{(profileData | async)?.dob}}</p>
     </div>
     <div>
         <p (click)="editaddress()">Postcode: {{(profileData | async)?.address}}</p>
     </div>
         <div>
+          <!-- in italics to make obvious not able to edit this text -->
       <p><em>Tap on any section to change it.</em></p>
     </div>
     <div class="spacer" style="height: 10px;"></div>
     <div>
+      <!-- functioning logout button  -->
       <button ion-button block (click)="logout()">Logout</button>
     </div>
 
 
 
     <!-- <div>
-        <p (click)="editmonth()">{{bio}}</p>
+      requires a layout for a bio and hobbies in this format 
+        <p (click)="editbio()">{{bio}}</p>
     </div> -->
 
 
