@@ -32,8 +32,7 @@ import { PostsProvider } from '../providers/posts/posts';
 import { FilePath } from '@ionic-native/file-path';
 import { ImgProvider } from '../providers/img/img';
 import { ProfileImgPage } from '../pages/profile-img/profile-img';
-
-
+import { ChatPage } from '../pages/chat/chat';
 
 @NgModule({
   declarations: [
@@ -49,6 +48,7 @@ import { ProfileImgPage } from '../pages/profile-img/profile-img';
     MakeRequestPage, 
     EditProfilePage, 
     ProfileImgPage,
+    ChatPage,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +72,7 @@ import { ProfileImgPage } from '../pages/profile-img/profile-img';
     MakeRequestPage,
     EditProfilePage,
     ProfileImgPage,
+    ChatPage,
   ],
   providers: [
     StatusBar,
